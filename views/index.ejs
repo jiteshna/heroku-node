@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Node Sample App</title>
+	<title>Jitesh Nambiar</title>
 
 	<!-- CSS -->
 	<!-- load bootstrap and our own personal stylesheet -->
@@ -12,13 +12,41 @@
 </head>
 <body>
 
-<div class="container">
-	<div class="jumbotron">
-		<h1>This Is Heroku Awesome!</h1>
-		<p>This is the sample of a tutorial on <a href="http://scotch.io">scotch.io</a></p>
-		<a href="http://scotch.io/tutorials/" class="btn btn-primary btn-lg">View the Tutorial</a>
-	</div>
+<ul class="tab">
+	<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'About')" id="defaultOpen">About</a></li>
+	<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Interests')">Interests</a></li>
+</ul>
+
+<div id="About" class="tabcontent">
+	<h3>About Me</h3>
+	<p>Programmer | Philanthropist</p>
 </div>
-	
+
+<div id="Interests" class="tabcontent">
+	<h3>Interests</h3>
+	<a href="https://techcrunch.com/" target="_blank">#technology</a>
+	<a href="https://www.pandora.com/" target="_blank">#music</a>
+	<a href="https://www.tripadvisor.com/" target="_blank">#travel</a>
+	<a href="http://www.lonelyplanet.com/" target="_blank">#outdoors</a>
+</div>
+
+<script>
+	function openCity( evt, cityName ) {
+		var i, tabcontent, tablinks;
+		tabcontent = document.getElementsByClassName( "tabcontent" );
+		for ( i = 0; i < tabcontent.length; i++ ) {
+			tabcontent[i].style.display = "none";
+		}
+		tablinks = document.getElementsByClassName( "tablinks" );
+		for ( i = 0; i < tablinks.length; i++ ) {
+			tablinks[i].className = tablinks[i].className.replace( " active", "" );
+		}
+		document.getElementById( cityName ).style.display = "block";
+		evt.currentTarget.className += " active";
+	}
+
+	// Get the element with id="defaultOpen" and click on it
+	document.getElementById( "defaultOpen" ).click();
+</script>
 </body>
 </html>
